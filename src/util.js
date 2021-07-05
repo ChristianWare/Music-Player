@@ -61,6 +61,26 @@ function chillHop() {
       id: uuidv4(),
       active: false,
     },
+    {
+      name: "Dreamstate",
+      artist: "Toonorth",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2021/05/8ef1fa972003495d1ecfba6292116174e9c5d940-1024x1024.jpg",
+      id: uuidv4(),
+      active: false,
+      color: ["#908DF9", "#3F4342"],
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=17947",
+    },
+    {
+      name: "Festa",
+      artist: "Misha, Jussi Halme",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2021/05/2473c60e471fe9b40e246bf7711c87d3d6ea69a7-1024x1024.jpg",
+      id: uuidv4(),
+      active: false,
+      color: ["#E97375", "#2E385A"],
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=12091",
+    },
     //ADD MORE HERE
   ];
 }
