@@ -2,7 +2,14 @@ import React from "react";
 import LibrarySong from "./LibrarySong";
 import styled from "styled-components";
 
-const Library = ({ songs, setCurrentSong, audioRef, isPlaying }) => {
+const Library = ({
+  songs,
+  setCurrentSong,
+  audioRef,
+  isPlaying,
+  setSongs,
+  libraryStatus,
+}) => {
   return (
     <LibraryContainer>
       <h2>Library</h2>
@@ -16,6 +23,7 @@ const Library = ({ songs, setCurrentSong, audioRef, isPlaying }) => {
             key={song.id}
             audioRef={audioRef}
             isPlaying={isPlaying}
+            setSongs={setSongs}
           />
         ))}
       </LibrarySongs>
@@ -34,10 +42,14 @@ const LibraryContainer = styled.div`
   background: white;
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
   overflow: scroll;
+  /* transform: translateX(-100%); */
+  transition: all 0.5s ease;
+  opacity: 1;
 
   h2 {
     padding: 2rem;
   }
+
 `;
 
 const LibrarySongs = styled.div`

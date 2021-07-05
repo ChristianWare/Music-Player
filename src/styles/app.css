@@ -36,3 +36,21 @@ h3, h4 {
   border-radius: 20px;
   border: transparent;
 }
+.selected {
+  background: rgb(145, 165, 218);
+}
+
+.active-library {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+}
