@@ -134,6 +134,10 @@ const TimeControl = styled.div`
   p {
     padding: 1rem;
   }
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 const PlayControls = styled.div`

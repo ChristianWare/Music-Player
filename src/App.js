@@ -5,6 +5,8 @@ import Song from "./components/Song";
 import data from "./data";
 import Library from "./components/Library";
 import Nav from "./components/Nav";
+import { motion } from "framer-motion"; 
+
 
 function App() {
   // Ref
@@ -26,35 +28,43 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus} />
-      <Song currentSong={currentSong} />
-      <Player
-        audioRef={audioRef}
-        setIsPlaying={setIsPlaying}
-        isPlaying={isPlaying}
-        currentSong={currentSong}
-        setSongInfo={setSongInfo}
-        songInfo={songInfo}
-        songs={songs}
-        setCurrentSong={setCurrentSong}
-        setSongs={setSongs}
-      />
-      <Library
-        audioRef={audioRef}
-        songs={songs}
-        setCurrentSong={setCurrentSong}
-        isPlaying={isPlaying}
-        setSongs={setSongs}
-        libraryStatus={libraryStatus}
-      />
-      <audio
-        onTimeUpdate={timeUpdateHandler}
-        onLoadedMetadata={timeUpdateHandler}
-        ref={audioRef}
-        src={currentSong.audio}
-      ></audio>
-    </div>
+    <motion.div
+      animate={{ opacity: 1, transition: { duration: 1 } }}
+      initial={{ opacity: 0 }}
+    >
+      <div className='App'>
+        <Nav
+          libraryStatus={libraryStatus}
+          setLibraryStatus={setLibraryStatus}
+        />
+        <Song currentSong={currentSong} />
+        <Player
+          audioRef={audioRef}
+          setIsPlaying={setIsPlaying}
+          isPlaying={isPlaying}
+          currentSong={currentSong}
+          setSongInfo={setSongInfo}
+          songInfo={songInfo}
+          songs={songs}
+          setCurrentSong={setCurrentSong}
+          setSongs={setSongs}
+        />
+        <Library
+          audioRef={audioRef}
+          songs={songs}
+          setCurrentSong={setCurrentSong}
+          isPlaying={isPlaying}
+          setSongs={setSongs}
+          libraryStatus={libraryStatus}
+        />
+        <audio
+          onTimeUpdate={timeUpdateHandler}
+          onLoadedMetadata={timeUpdateHandler}
+          ref={audioRef}
+          src={currentSong.audio}
+        ></audio>
+      </div>
+    </motion.div>
   );
 }
 
